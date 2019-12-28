@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "grakra/k8s_bionic64"
   config.vm.hostname = "k8s-160-10"
   config.vm.provider "virtualbox" do |v|
-      v.customize ["modifyvm", :id, "--nic2", "bridged", "--nictype2", "82540EM", "--bridgeadapter2", "br-1ea8f8e40c6d", "--nicpromisc2", "allow-all"]
+      v.customize ["modifyvm", :id, "--nic2", "bridged", "--nictype2", "82545EM", "--bridgeadapter2", "br-1ea8f8e40c6d", "--nicpromisc2", "allow-all","--nicspeed2", "2048"]
       v.memory=8192
       v.cpus=2
       v.name="k8s-160-10"
